@@ -12,9 +12,14 @@
 
         <!-- app -->
         <div id="app">
-            <ul>
-                <li v-for="(email, index) in emails" :key="index">{{ email }}</li>
-            </ul>
+            <div v-if="allEmailsFetched">
+                <ul>
+                    <li v-for="(email, index) in emails" :key="index">{{ email }}</li>
+                </ul> 
+            </div>
+            <div v-else>
+                <p>Loading...</p>
+            </div>
             <button @click="getEmails">Fetch 10 email addresses</button>
         </div>
 
