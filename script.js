@@ -5,7 +5,6 @@ createApp({
         return{
             emails: [],
             currentIndex: 0,
-            fetchPromises: [],
             allEmailsFetched: false
         }
     },
@@ -18,13 +17,9 @@ createApp({
 
                     if(this.emails.length === 10){
                         this.allEmailsFetched = true;
-                    }
+                    } 
                 })
-                fetchPromises.push(promise);
             }
-            Promise.all(fetchPromises).then(() => {
-                this.allEmailsFetched = true;
-            });
         }
     },
     mounted(){
