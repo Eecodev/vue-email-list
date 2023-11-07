@@ -15,7 +15,7 @@
             <ul>
                 <li v-for="(email, index) in emails" :key="index">{{ email }}</li>
             </ul>
-            <button @click="getEmails" v-if="currentIndex < 10">Fetch next email</button>
+            <button @click="getEmails">Fetch 10 email addresses</button>
         </div>
 
         
